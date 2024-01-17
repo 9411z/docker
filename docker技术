@@ -1,0 +1,9 @@
+1、根据容器生成镜像
+  
+$ docker exec -it 4ddf4638572d /bin/sh
+# 在容器内部新建了一个文件
+root@4ddf4638572d:/app# touch test.txt
+root@4ddf4638572d:/app# exit
+
+#将这个新建的文件提交到镜像中保存
+$ docker commit 4ddf4638572d geektime/helloworld:v2
